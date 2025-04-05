@@ -182,7 +182,7 @@ if st.button("🔍 Predict"):
     if prediction[0] == 1:
         st.error("⚠️ High risk of sleep disorder detected!")
 
-        if sleep_duration < 5 or quality_of_sleep < 3:
+        if sleep_duration < 6 or quality_of_sleep < 3:
             possible_disorders.append("Insomnia")
         if stress_level > 5:
             possible_disorders.append("Sleep Anxiety")
@@ -234,11 +234,11 @@ def generate_pdf(disorders, inputs):
     c.setFillColor(colors.darkblue)
     c.drawString(200, height - 50, "Sleep Disorder Report")
 
-    # Timestamp in top-right
-    timestamp = datetime.now().strftime("%Y-%m-%d %I:%M %p")
+    from datetime import datetime
+    date_only = datetime.now().strftime("%Y-%m-%d")
     c.setFont("Helvetica", 10)
-    c.setFillColor(colors.black)
-    c.drawString(400, height - 20, f"Generated on: {timestamp}")
+    c.drawString(400, height - 20, f"Generated on: {date_only}")
+
 
     y = height - 100
 

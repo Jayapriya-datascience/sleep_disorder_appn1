@@ -322,7 +322,6 @@ occupation_map = {
 user_input_data = {
     "Age": age,
     "Gender": gender_map.get(gender, "Unknown"),
-    "Occupation": occupation_map.get(occupation, "Unknown"),
     "Sleep Duration": sleep_duration,
 }
 
